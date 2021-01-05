@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- MAIN STYLE CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- RESPONSIVE CSS-->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <title>PIMS</title>
+</head>
+<!-- try for nav bar -->
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a href="/about_pims" class="navbar-brand">About PIMS</a>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/pricing">Pricing</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Clients<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/home">Swadesh Properties Ltd</a></li>
+                                    <li><a href="#">Concord Real Estate</a></li>
+                                    <li><a href="#">Nakshi Homes Ltd</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">Documentation</a></li>
+
+                            <li><a href="#">Demo</a></li>
+                            
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form action="" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="search" id="" placeholder="Search To our site..." class="form-control">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-arrow-right"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="./profile"><span class="glyphicon glyphicon-user"></span>{% firstof request.user.get_full_name request.user.username %}</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/accounts/register">Registration</a></li>
+                                    <li><a href="/accounts/login">Login</a></li>
+                                    <li><a href="/accounts/logout/">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div>
+<h1 style="text-align:center">
+    Plot Information Management System (PIMS)
+</h1>
+
+<style>
+body {
+  background: rgb(240, 208, 208);
+}
+
+.cardView{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+  /*
+  This doesn't work
+  margin-left: -25%;
+  margin-top: -25%;
+  */
+  
+  width: 40%;
+  height: 50%;
+
+  padding: 20px;  
+  background: rgb(223, 92, 103);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+
+#myimg{
+    position:center;
+    padding:0px;
+    bottom:10px;
+    margin: 10px auto 20px;
+    display: block;
+
+}
+
+
+.cardViewForBOX{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+
+  
+  width: 40%;
+  height: 27%;
+
+  padding: 20px;  
+  background: rgba(66, 202, 73, 0);
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
+}
+.spoiler
+    {
+        position:center;
+    border:1px solid #ddd;
+    padding:3px;
+    }
+.spoiler .inner
+    {
+        text-align: center;
+    border:1px solid #eee;
+    padding:3px;margin:3px;
+    }
+
+</style>
+<script type="text/javascript">
+    function showSpoiler(obj)
+        {
+        var inner = obj.parentNode.getElementsByTagName("div")[0];
+        if (inner.style.display == "none")
+            inner.style.display = "";
+        else
+            inner.style.display = "none";
+        }
+        </script>
+    
+<!-- <div class="dropdown-menu">
+    Percentage sized and still centered.
+  </div> -->
+
+<div>
+
+    <div class="dropdown cardViewForBOX">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Housing project name 
+        <span class="caret"></span></button>
+        
+        <ul class="dropdown-menu cardView">
+          <li style="text-align:center"><a href="/home">Swadesh Properties Ltd</a></li>
+          <li><a href="#">Concord Real Estate</a></li>
+          <li><a href="#">Nakshi Homes Ltd</a></li>
+        </ul>
+      </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="spoiler">
+    <img id="myimg" onclick="showSpoiler(this);" src="{% static 'img/7.jpg' %}" alt="flowers in bd">
+    <div class="inner" style="display:none;">
+
+
+            Geo-Planning for Advanced Development (GPAD)<br>
+
+            House 4 (Flat A1 & A2), Road 4, Block J, Banashree, Dhaka 1219<br>
+            
+            Phone: 01717087089; Email: gpadbd@gmail.com
+
+
+
+    </div>
+</div>
+
+
+</body>
+</html>
+

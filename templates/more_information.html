@@ -1,0 +1,294 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- MAIN STYLE CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- RESPONSIVE CSS-->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <title>PIMS</title>
+</head>
+<!-- try for nav bar -->
+
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>`
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{% static 'L.Geoserver.js' %}"></script>
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a href="#" class="navbar-brand">About PIMS</a>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/pricing">Pricing</a></li>
+
+                            <li><a href="#">Documentation</a></li>
+
+                            <li><a href="#">Demo</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form action="" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="search" id="" placeholder="Search To our site..." class="form-control">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-arrow-right"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/accounts/login">Login</a></li>
+                                    <li><a href="/accounts/logout/">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+  
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+body {
+  background-color: #3e94ec;
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+div.table-title {
+   display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+}
+
+.table-title h3 {
+   color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+</style>
+
+
+
+<body>
+<div class="table-title">
+<h3>Plot Detail information</h3>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Name</th>
+<th class="text-left">Values</th>
+</tr>
+</thead>
+
+    {% for athlete in sodeshData %}
+    
+        {% if athlete.plot_no == sum %}
+            <tbody class="table-hover">
+            <tr>
+            <td class="text-left">Plot Number</td>
+            <td class="text-left">{{ athlete.plot_no }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Area square (ft)</td>
+            <td class="text-left">{{ athlete.area_sqft }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Area Bigha</td>
+            <td class="text-left">{{ athlete.area_bigha }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">katha</td>
+            <td class="text-left">{{ athlete.katha_1 }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Dimension.</td>
+            <td class="text-left">{{ athlete.dimension }}</td>
+            </tr>
+
+            <tr>
+            <td class="text-left">Owner name.</td>
+            <td class="text-left">{{ athlete.owner_name }}</td>
+            </tr>
+
+            <tr>
+            <td class="text-left">Spouse name.</td>
+            <td class="text-left">{{ athlete.spouse_nam }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Land category</td>
+            <td class="text-left">{{ athlete.land_cat  }}</td>
+            </tr>
+
+            </tbody>
+        {% endif %}
+    {% endfor %}
+
+
+</table>
+  
+
+  </body>
+</body>
+</html>
+
+

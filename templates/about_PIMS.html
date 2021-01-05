@@ -1,0 +1,218 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- MAIN STYLE CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- RESPONSIVE CSS-->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <title>PIMS</title>
+</head>
+<!-- try for nav bar -->
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                        <a href="#" class="navbar-brand">About PIMS</a>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="mobile_menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/pricing">Pricing</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Our Clients<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/home">Swadesh Properties Ltd</a></li>
+                                    <li><a href="#">Concord Real Estate</a></li>
+                                    <li><a href="#">Nakshi Homes Ltd</a></li>
+
+                                </ul>
+                            </li>
+                            <li><a href="#">Documentation</a></li>
+
+                            <li><a href="#">Demo</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form action="" class="navbar-form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="search" id="" placeholder="Search To our site..." class="form-control">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-arrow-right"></span></span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/accounts/login">Login</a></li>
+                                    <li><a href="/accounts/logout/">Log out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+    padding:0;
+    margin:0;
+}
+
+body {
+	color: #2c3e50;
+	font-size: 1em;
+	font-family: 'Source Serif Pro', 'Helvetica Neue', serif;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+a {
+	color: #2c3e50;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.header {
+	padding: 8.5em 0;
+	background-image: url('https://dl.dropboxusercontent.com/u/18570019/header-image.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.footer,
+.header-intro,
+.header-name {
+	text-align: center;
+}
+
+.header-intro {
+	margin-bottom: 0em;
+	color: #e67e22;
+	font-size: 2.25em;
+	text-shadow: 0px 1px 0px #d35400;
+}
+
+.header-name {
+	margin-top: -0.2em;
+	color: #89c581;
+	font-size: 6.0em;
+	text-shadow: 0px 3px 0px #d35400;
+	font-weight: 700;
+}
+
+.about,
+.questions {
+	max-width: 37.5em;
+	margin: 0 auto;
+	margin-top: 3em;
+	line-height: 1.5em;
+    font-size: 2.25em;
+}
+
+.questions h3 {
+	color: #e67e22;
+}
+
+
+
+.social {
+	text-align: center;
+  margin-left: -2em;
+}
+
+.social > li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 1.0em;
+}
+
+
+</style>
+<div>
+    <header class="header">
+        <div>
+            <p class="header-intro">About PIMS</p>
+            <h1 class="header-name">Plot Information Management System (PIMS) is a complete solution for Land Developers.</h1>
+        </div>
+    </header>
+
+    <section class="about">
+        <h1>Facilities in PIMS:</h1>
+        <h2>Land Developers can do </h2>
+
+
+        
+        <div>
+            <ul>
+                <li>Booking of the plot</li>
+                <li>Reminder of the due payment (SMS/Email)</li>
+                <li>Marketing Solutions</li>
+                <li>Payment Solutions</li>
+                <li>File Management System ( can be store all types of file related to customer/plot)</li>
+                <li>Registration Solution</li>
+              </ul>
+
+
+        </div>
+
+       <h3>Customer:</h3> 
+        
+        
+        
+        
+        
+        
+        <div>
+            <ul>
+                <li>Booking of the plot (Application)</li>
+                <li>Checking available plots in the housing</li>
+                <li>Payment history checking</li>
+                <li>Online Payment (SSL Payment Gateway directly to to Land Developer)</li>
+                <li>Application ( Any Change/Modification/ Land Development Fees/ Plot Registration etc)</li>
+              </ul>
+
+
+        </div>
+
+
+
+
+</body>
+</html>
+
