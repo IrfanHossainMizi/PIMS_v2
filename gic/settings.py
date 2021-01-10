@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'bd',
     'leaflet',
     'accounts_user',
+    'contacts',
 
 ]
 

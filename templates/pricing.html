@@ -109,6 +109,20 @@
       </div>
     </div>
 
+    <style>
+      .company_to_admin_message {
+        text-align: center;
+        color: red;
+        font-size: 30px;
+      }
+    </style>
+</br>
+</br>
+    {% if messages %} {% for message in messages %}
+
+    <div class="company_to_admin_message">{{message}}</div>
+    {% endfor %} {% endif %}
+
     <!-- START PRICEING AREA -->
     <section id="pricing" class="our-pricing-area section-padding">
       <div class="container">
@@ -144,7 +158,9 @@
                   <li>Sub-Domain</li>
                   <li>2 GB Space</li>
                 </ul>
-                <a class="package-btn" href="#">Registration</a>
+                <a class="package-btn" href="/company_contact_to_admin"
+                  >Registration</a
+                >
               </div>
             </div>
           </div>
@@ -169,7 +185,9 @@
                   <li>Sub-Domain</li>
                   <li>5 GB Space</li>
                 </ul>
-                <a class="package-btn" href="#">Registration</a>
+                <a class="package-btn" href="/company_contact_to_admin"
+                  >Registration</a
+                >
               </div>
             </div>
           </div>
@@ -194,7 +212,9 @@
                   <li>Sub-Domain</li>
                   <li>10 GB Space</li>
                 </ul>
-                <a class="package-btn" href="#">Registration</a>
+                <a class="package-btn" href="/company_contact_to_admin"
+                  >Registration</a
+                >
               </div>
             </div>
           </div>
@@ -218,7 +238,9 @@
                   <li>Sub-Domain</li>
                   <li>20 GB Space</li>
                 </ul>
-                <a class="package-btn" href="#">Registration</a>
+                <a class="package-btn" href="/company_contact_to_admin"
+                  >Registration</a
+                >
               </div>
             </div>
           </div>

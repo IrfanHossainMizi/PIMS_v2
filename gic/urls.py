@@ -19,12 +19,14 @@ from .views import home
 
 from bd.views import login_view, register_view, logout_view, sodesh,sodesh_home,more_information,home
 from accounts_user.views import user_information
+from contacts.views import sodesh_contact,company_contact_to_admin
 from django.conf.urls import url, include
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('', include('bd.urls')),
     path('', include('accounts_user.urls')),
+     path('', include('contacts.urls')),
     # path('detail/',home),
     path('accounts/login/', login_view),
     path('accounts/register/', register_view),

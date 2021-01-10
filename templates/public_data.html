@@ -150,11 +150,21 @@
       margin-right: 0;
       font-weight: bold;
     }
+    .sodesh_message {
+      text-align: center;
+      color: red;
+      font-size: 30px;
+    }
   </style>
   <body>
     <h1 style="text-align: center">
-      Swadesh Properties Ltd this is use for us
+      Swadesh Properties Ltd <a href="/sodesh_contact"> I am a plot owner</a>
     </h1>
+
+    {% if messages %} {% for message in messages %}
+
+    <div class="sodesh_message">{{message}}</div>
+    {% endfor %} {% endif %}
     <div id="map"></div>
 
     <script>

@@ -82,7 +82,100 @@
     Plot Information Management System (PIMS)
 </h1>
 
+
+
 <style>
+
+
+
+  /* Brand colours */
+  $my-colors: (
+    brand1: (
+      10: #ffd019,
+      20: #ffd019,
+      30: #ffd019,
+      40: #ffd019,
+      50: #ffd019,
+      60: #ffd019,
+      70: #ffd019,
+      80: #ffd019,
+      90: #ffd019,
+      100: #ffd019,
+    ),
+    brand2: (
+      10: #ffd9e0,
+      20: #ffd9e0,
+      30: #ffd9e0,
+      40: #ffd9e0,
+      50: #ffd9e0,
+      60: #ffd9e0,
+      70: #ffd9e0,
+      80: #ffd9e0,
+      90: #ffd9e0,
+      100: #d81946,
+    ),
+    brand3: (
+      10: #e0f6f3,
+      20: #e0f6f3,
+      30: #e0f6f3,
+      40: #e0f6f3,
+      50: #e0f6f3,
+      60: #e0f6f3,
+      70: #e0f6f3,
+      80: #e0f6f3,
+      90: #3a887d,
+      100: #e0f6f3,
+    ),
+    brand4: (
+      10: #c4dbeb,
+      20: #c4dbeb,
+      30: #c4dbeb,
+      40: #c4dbeb,
+      50: #c4dbeb,
+      60: #c4dbeb,
+      70: #c4dbeb,
+      80: #c4dbeb,
+      90: #2f3337,
+      100: #c4dbeb,
+    ),
+  );
+
+  @function tint($color, $percent: null) {
+    @if ($percent != null) {
+      @return map-get(map-get($my-colors, $color), $percent);
+    } @else {
+      @return map-get(map-get($my-colors, $color), 100);
+    }
+  }
+
+  .box {
+    display: inline-block;
+    width: 500px;
+    padding: 1.3rem;
+    margin: 30px;
+    background-color: tint(brand1, 90);
+    border-radius: 3px;
+
+    &--success {
+      background-color: tint(brand3, 20);
+      color: tint(brand3, 90);
+    }
+
+    &--danger {
+      background-color: tint(brand2, 20);
+      color: tint(brand2);
+    }
+
+    &--info {
+      background-color: tint(brand4, 30);
+      color: tint(brand4, 90);
+    }
+  }
+
+
+
+
+
 body {
   background: rgb(240, 208, 208);
 }
