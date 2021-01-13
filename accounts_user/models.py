@@ -2,6 +2,9 @@ from django.db import models
 from datetime import datetime
 
 # Create your models here.
+
+
+# SodeshOwnerUser is main method which is communicate and data view tmplate as a plot owner
 class SodeshOwnerUser(models.Model):
     username = models.CharField(max_length=20)
     email = models.CharField(max_length=20)
@@ -14,6 +17,8 @@ class SodeshOwnerUser(models.Model):
     update_date = models.DateField(default=datetime.now)
     first_installment = models.DateField()
 
+    
+# this is company employee information is given here
 class SodeshEmployee(models.Model):
     username = models.CharField(max_length=20)
     email = models.CharField(max_length=20)
@@ -21,6 +26,10 @@ class SodeshEmployee(models.Model):
     designation = models.CharField(max_length=20)
     company_name = models.CharField(max_length=20)
 
+
+
+
+# SornaliOwnerUser is main method which is communicate and data view tmplate as a plot owner
 class SornaliOwnerUser(models.Model):
     username = models.CharField(max_length=20)
     email = models.CharField(max_length=20)
@@ -33,6 +42,9 @@ class SornaliOwnerUser(models.Model):
     update_date = models.DateField(default=datetime.now)
     first_installment = models.DateField()
 
+
+
+# this is company employee information is given here
 class SornaliEmployee(models.Model):
     username = models.CharField(max_length=20)
     email = models.CharField(max_length=20)

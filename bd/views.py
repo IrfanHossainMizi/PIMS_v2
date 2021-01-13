@@ -71,6 +71,7 @@ def bangladesh(request):
     return HttpResponse(bangladeshData, content_type='geojson')
 
 def sodesh(request):
+    user = request.user
     sodeshData = serialize('geojson', Sodesh.objects.all())
     return HttpResponse(sodeshData, content_type='geojson')
 
@@ -111,6 +112,7 @@ def more_information(request):
 
 
 def more_informationht(request):
+    user = request.user
     return render(request, 'more_information.html')
 
 def index(request):

@@ -229,6 +229,9 @@ td.text-right {
 
 
 <body>
+
+{% if user.is_authenticated %}
+
 <div class="table-title">
 <h3>Plot Detail information</h3>
 </div>
@@ -285,7 +288,12 @@ td.text-right {
 
 
 </table>
-  
+      {% else %}
+    <p style="text-align: center">
+      Please <a href="/accounts/register">Register</a> or
+      <a href="/accounts/login">Login</a>
+    </p>
+    {% endif %}
 
   </body>
 </body>

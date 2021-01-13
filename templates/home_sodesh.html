@@ -142,8 +142,8 @@
   </style>
   <body>
     <h1 style="text-align: center">Swadesh Properties Ltd</h1>
-
-    {% comment %} <button class="print-map">Print map</button> {% endcomment %}
+    {% if user.is_authenticated %} {% comment %}
+    <button class="print-map">Print map</button> {% endcomment %}
 
     <div id="map"></div>
 
@@ -267,5 +267,11 @@
 
       legend.addTo(map);
     </script>
+    {% else %}
+    <p style="text-align: center">
+      Please <a href="/accounts/register">Register</a> or
+      <a href="/accounts/login">Login</a>
+    </p>
+    {% endif %}
   </body>
 </html>
