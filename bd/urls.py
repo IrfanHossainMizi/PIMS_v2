@@ -1,7 +1,7 @@
 
 from django.urls import path
-from .views import home,index, bangladesh, sodesh,pricing,about_pims, contact
-
+from .views import home,index, bangladesh, sodesh,pricing,about_pims, contact,new_dhaka_city,public_new_dhaka_city,owner_new_dhaka_city
+from .views import river_park_model_town,public_river_park_model_town,owner_river_park_model_town
 urlpatterns = [
 
     path('', index, name = 'index'),
@@ -9,6 +9,14 @@ urlpatterns = [
     path('pricing', pricing, name = 'pricing'),
     path('bangladeshData', bangladesh, name='bangladeshData'),
     path('sodeshData', sodesh, name='sodeshData'),
+# new dhaka city part
+    path('new_dhaka_cityData',new_dhaka_city,name='new_dhaka_cityData'),
+    path('public_new_dhaka_city', public_new_dhaka_city, name='public_new_dhaka_'),
+    path('owner_new_dhaka_city', owner_new_dhaka_city, name='owner_new_dhaka_city'),
+# river_park_model_town
+    path('river_park_model_townData',river_park_model_town,name='river_park_model_townData'),
+    path('public_river_park_model_town', public_river_park_model_town, name='public_river_park_model_town'),
+    path('owner_river_park_model_town', owner_river_park_model_town, name='owner_river_park_model_town'),
     path('about_pims',about_pims,name='about_pims'),
     path('contact',contact,name='contact'),
     path('contact',contact,name='contact'),

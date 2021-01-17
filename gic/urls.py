@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path,include
 from .views import home
 
-from bd.views import login_view, register_view, logout_view, sodesh,sodesh_home,more_information,home
+from bd.views import login_view, register_view, logout_view, sodesh,sodesh_home,more_information,home,public_new_dhaka_city,owner_new_dhaka_city
+from bd.views import public_river_park_model_town, owner_river_park_model_town, more_information_new_dhaka_city
 from accounts_user.views import user_information
 from contacts.views import sodesh_contact,company_contact_to_admin
 from django.conf.urls import url, include
@@ -34,6 +35,11 @@ urlpatterns = [
     path('home/',home),
     path('sodeshDat/',sodesh_home),
     path('more_infortion/',more_information),
+    path('public_new_dhaka_city/',public_new_dhaka_city),
+    path('owner_new_dhaka_city/',owner_new_dhaka_city),
+    path('more_information_new_dhaka_city/',more_information_new_dhaka_city),
+    path('public_river_park_model_town/',public_river_park_model_town),
+    path('owner_river_park_model_town/',owner_river_park_model_town),
 # adminlte part
     url(r'^$', TemplateView.as_view(template_name='adminlte/index.html')),
     url(r'^login/$', TemplateView.as_view(template_name='adminlte/login.html')),

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.gis.db import models as gis_model
-
+from django.contrib.gis.db import models
 # Create your models here.
 
 class Bangladesh(models.Model):
@@ -61,3 +61,93 @@ class Sodesh(models.Model):
     class Meta:
         managed = False
         db_table = 'sodesh'
+
+
+class NewDhakaCity(models.Model):
+    geom = models.PolygonField(blank=True, null=True)
+    landuse = models.CharField(max_length=50, blank=True, null=True)
+    area_sqft = models.FloatField(blank=True, null=True)
+    zone = models.CharField(max_length=50, blank=True, null=True)
+    block = models.CharField(max_length=50, blank=True, null=True)
+    owner_name = models.CharField(max_length=50, blank=True, null=True)
+    father_field = models.CharField(db_column='father__', max_length=50, blank=True, null=True)  # Field renamed because it contained more than one '_' in a row. Field renamed because it ended with '_'.
+    spouse_nam = models.CharField(max_length=50, blank=True, null=True)
+    national_i = models.IntegerField(blank=True, null=True)
+    tin_field = models.IntegerField(db_column='tin__', blank=True, null=True)  # Field renamed because it contained more than one '_' in a row. Field renamed because it ended with '_'.
+    land_price = models.IntegerField(blank=True, null=True)
+    mou_name = models.CharField(max_length=50, blank=True, null=True)
+    mou_jl = models.CharField(max_length=50, blank=True, null=True)
+    pur_date = models.CharField(max_length=50, blank=True, null=True)
+    paid_date = models.CharField(max_length=50, blank=True, null=True)
+    inst_date = models.CharField(max_length=50, blank=True, null=True)
+    land_cat = models.CharField(max_length=50, blank=True, null=True)
+    plot_no = models.CharField(max_length=50, blank=True, null=True)
+    contact = models.CharField(max_length=50, blank=True, null=True)
+    code = models.CharField(max_length=50, blank=True, null=True)
+    area_bigha = models.CharField(max_length=50, blank=True, null=True)
+    area_acre = models.CharField(max_length=50, blank=True, null=True)
+    area_katha = models.CharField(max_length=50, blank=True, null=True)
+    dimension = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'new_dhaka_city'
+
+class RiverParkModelTown(models.Model):
+    geom = models.PolygonField(blank=True, null=True)
+    name = models.CharField(max_length=50, blank=True, null=True)
+    area_sqft = models.FloatField(blank=True, null=True)
+    area_katha = models.FloatField(blank=True, null=True)
+    area_acre = models.FloatField(blank=True, null=True)
+    plot_no = models.CharField(max_length=50, blank=True, null=True)
+    code = models.CharField(max_length=50, blank=True, null=True)
+    block = models.CharField(max_length=50, blank=True, null=True)
+    owner_name = models.CharField(max_length=50, blank=True, null=True)
+    father_field = models.CharField(db_column='father__', max_length=50, blank=True, null=True)  # Field renamed because it contained more than one '_' in a row. Field renamed because it ended with '_'.
+    spouse_nam = models.CharField(max_length=50, blank=True, null=True)
+    national_i = models.CharField(max_length=50, blank=True, null=True)
+    tin_field = models.CharField(db_column='tin__', max_length=50, blank=True, null=True)  # Field renamed because it contained more than one '_' in a row. Field renamed because it ended with '_'.
+    land_price = models.IntegerField(blank=True, null=True)
+    mou_name = models.CharField(max_length=50, blank=True, null=True)
+    mou_jl = models.CharField(max_length=50, blank=True, null=True)
+    pur_date = models.DateField(blank=True, null=True)
+    paid_date = models.DateField(blank=True, null=True)
+    inst_date = models.DateField(blank=True, null=True)
+    land_cat = models.CharField(max_length=50, blank=True, null=True)
+    contact = models.CharField(max_length=50, blank=True, null=True)
+    area_bigha = models.CharField(max_length=50, blank=True, null=True)
+    dimension = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'river_park_model_town'
+
+
+class Swadesh(models.Model):
+    object_id = models.AutoField(primary_key=True)
+    geom = models.MultiPolygonField(blank=True, null=True)
+    area_sqft = models.FloatField(blank=True, null=True)
+    area_bigha = models.FloatField(blank=True, null=True)
+    dimension = models.CharField(max_length=20, blank=True, null=True)
+    plot_no = models.CharField(max_length=50, blank=True, null=True)
+    owner_name = models.CharField(max_length=50, blank=True, null=True)
+    father_field = models.CharField(db_column='father__', max_length=50, blank=True, null=True)  # Field renamed because it contained more than one '_' in a row. Field renamed because it ended with '_'.
+    spouse_nam = models.CharField(max_length=50, blank=True, null=True)
+    national_i = models.BigIntegerField(blank=True, null=True)
+    tin_field = models.BigIntegerField(db_column='tin___', blank=True, null=True)  # Field renamed because it contained more than one '_' in a row. Field renamed because it ended with '_'.
+    land_price = models.BigIntegerField(blank=True, null=True)
+    mou_name = models.CharField(max_length=50, blank=True, null=True)
+    mou_jl = models.CharField(max_length=50, blank=True, null=True)
+    pur_date = models.DateField(blank=True, null=True)
+    paid_date = models.DateField(blank=True, null=True)
+    inst_date = models.DateField(blank=True, null=True)
+    land_cat = models.CharField(max_length=50, blank=True, null=True)
+    block = models.CharField(max_length=50, blank=True, null=True)
+    contact = models.CharField(max_length=100, blank=True, null=True)
+    code = models.CharField(max_length=100, blank=True, null=True)
+    area_katha = models.CharField(max_length=50, blank=True, null=True)
+    area_acre = models.CharField(max_length=50, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'swadesh'

@@ -5,7 +5,7 @@ from .models import Bangladesh
 from django.contrib import messages
 import re
 
-from .models import Sodesh
+from .models import Sodesh,NewDhakaCity,RiverParkModelTown
 
 from django.shortcuts import render, redirect
 
@@ -74,6 +74,79 @@ def sodesh(request):
     user = request.user
     sodeshData = serialize('geojson', Sodesh.objects.all())
     return HttpResponse(sodeshData, content_type='geojson')
+# new dhaka city part
+def new_dhaka_city(request):
+    user = request.user
+    new_dhaka_cityData = serialize('geojson', NewDhakaCity.objects.all())
+    return HttpResponse(new_dhaka_cityData, content_type='geojson')
+
+
+def public_new_dhaka_city(request):
+
+    return render(request, 'public_new_dhaka_city.html')
+
+
+def owner_new_dhaka_city(request):
+
+    return render(request, 'owner_new_dhaka_city.html')
+
+def more_information_new_dhaka_city(request):
+    NewDhakaCityData =  NewDhakaCity.objects.all()
+    fg = str(request.get_full_path)
+    
+    ft1 = str(re.findall("[0-9]", fg))
+    ft2 = str(re.findall("[0-9][0-9]", fg))
+    ft3 = str(re.findall("[0-9][0-9][0-9]", fg))
+    x1 = '\n'.join(ft1)
+    x2 = '\n'.join(ft2)
+    x3 = '\n'.join(ft3)
+
+
+    d1 = x1[4:5]
+    d2_1 = x2[4:5]
+    d2_2 = x2[6:7]
+    d2 = d2_1 + d2_2
+    d3_1 = x3[4:5]
+    d3_2 = x3[6:7]
+    d3_3 = x3[8:9]   
+    d3 = d3_1 + d3_2 +d3_3
+
+    if len(d3) > 2:
+        sum = d3
+    elif len(d2) > 1:
+        sum = d2
+    else:
+        sum = d1
+
+
+    
+
+    return render(request, 'more_information_new_dhaka_city.html', locals())
+
+
+
+def more_informationht(request):
+    user = request.user
+    return render(request, 'more_information.html')
+
+# new river park model town part
+def river_park_model_town(request):
+    user = request.user
+    river_park_model_townData = serialize('geojson', RiverParkModelTown.objects.all())
+    return HttpResponse(river_park_model_townData, content_type='geojson')
+
+
+def public_river_park_model_town(request):
+
+    return render(request, 'public_river_park_model_town.html')
+
+
+def owner_river_park_model_town(request):
+
+    return render(request, 'owner_river_park_model_town.html')
+
+
+
 
 
 def more_information(request):

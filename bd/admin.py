@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Bangladesh,Sodesh
+from .models import Bangladesh,Sodesh,NewDhakaCity,RiverParkModelTown,Swadesh
 from leaflet.admin import LeafletGeoAdmin
 
 # Register your models here.
@@ -16,11 +16,26 @@ class SodeshAdmin(LeafletGeoAdmin):
     list_display = ['area_k','katha','plot_no','land_cat']
     # list_filter = ['shape_leng','adm1_en']
     # list_editable = ['date']
+class NewDhakaCityAdmin(LeafletGeoAdmin):
+    list_display = ['plot_no','land_cat']
+    # list_filter = ['shape_leng','adm1_en']
+    # list_editable = ['date']
 
+class RiverParkModelTownAdmin(LeafletGeoAdmin):
+    list_display = ['plot_no','land_cat']
+    # list_filter = ['shape_leng','adm1_en']
+    # list_editable = ['date']
+
+class SwadeshAdmin(LeafletGeoAdmin):
+    list_display = ['plot_no','land_cat']
+    # list_filter = ['shape_leng','adm1_en']
+    # list_editable = ['date']
 admin.site.register(Bangladesh,BangladeshAdmin)
 admin.site.register(Sodesh, SodeshAdmin)
 
-
+admin.site.register(NewDhakaCity, NewDhakaCityAdmin)
+admin.site.register(RiverParkModelTown, RiverParkModelTownAdmin)
+admin.site.register(Swadesh, SwadeshAdmin)
 
 
 
