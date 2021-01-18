@@ -146,14 +146,14 @@
     }
   </style>
   <body>
-    <h1 style="text-align: center">New Dhaka City</h1>
+    <h1 style="text-align: center">Swadesh Properties Ltd</h1>
     {% if user.is_authenticated %} {% comment %}
     <button class="print-map">Print map</button> {% endcomment %}
 
     <div id="map"></div>
 
     <script>
-      var map = L.map("map").setView([23.638748, 90.363044], 16);
+      var map = L.map("map").setView([23.655575, 90.375662], 17);
 
       var osm = L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -205,7 +205,7 @@
       osm.addTo(map);
       L.control.layers(baseLayers).addTo(map);
 
-      $.getJSON("{% url 'new_dhaka_cityData' %}", function (data) {
+      $.getJSON("{% url 'swadeshData' %}", function (data) {
         L.geoJSON(data, {
           onEachFeature: function (feature, layer) {
             layer.bindPopup(
@@ -224,7 +224,7 @@
       <h5>Katha ammount : ${feature.properties.new}</h5>
       <h5>Land condition : ${feature.properties.land_cat}</h5>
       <h5>Dimension: ${feature.properties.dimension}</h5>
-      <h5><a href="../more_information_new_dhaka_city/?plot_num=${feature.properties.plot_no}">More Information</a></h5>`
+      <h5><a href="../more_information_swadesh/?plot_num=${feature.properties.plot_no}">More Information</a></h5>`
             );
           },
           style: geojsonStyle,

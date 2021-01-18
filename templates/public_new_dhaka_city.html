@@ -28,6 +28,11 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+              <div class="logo_nav">
+                <img src="{% static 'img/pims_icon.png' %}" class="img-fluid" />
+              </div>
+            </a>
             <button
               class="navbar-toggle"
               data-target="#mobile_menu"
@@ -227,7 +232,7 @@
             layer.bindPopup(
               `<h4>Public Information</h4>
       <h5>Plot Number: ${feature.properties.plot_no}</h5>
-      <h5>Plot Size: ${feature.properties.katha} katha</h5>
+      <h5>Plot Size: ${feature.properties.area_katha}</h5>
       <h5>Block: </h5>
       <h5><a href="/owner_new_dhaka_city/">Details</a></h5>`
             );

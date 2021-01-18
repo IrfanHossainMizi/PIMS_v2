@@ -33,13 +33,11 @@
                 <div class="col-lg-12">
 
                     <div class="navbar-header">
-                    <a class="navbar-brand" href="/">
+                                        <a class="navbar-brand" href="/">
                           <div class="logo_nav">
                                 <img src="{% static 'img/pims_icon.png' %}" class="img-fluid">
                           </div>
                     </a>
-
-
                         <button class="navbar-toggle" data-target="#mobile_menu" data-toggle="collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                         <a href="#" class="navbar-brand">About PIMS</a>
                     </div>
@@ -67,7 +65,7 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> {% firstof request.user.get_full_name request.user.username %}</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                             <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-log-in"></span> Login / Sign Up <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="/accounts/login">Login</a></li>
@@ -236,120 +234,73 @@ td.text-right {
 
 
 <body>
+
+{% if user.is_authenticated %}
+
 <div class="table-title">
-<h3>Owner Profile Detail information</h3>
+<h3>Plot Detail information</h3>
 </div>
 <table class="table-fill">
 <thead>
 <tr>
-<th class="text-left"></th>
-<th class="text-left"></th>
+<th class="text-left">Name</th>
+<th class="text-left">Values</th>
 </tr>
 </thead>
 
-    {% for athlete in sodeshOwnerUser %}
+    {% for athlete in swadeshData %}
     
-        {% if athlete.username == request.user.username%}
+        {% if athlete.plot_no == sum %}
             <tbody class="table-hover">
-            <tr>
-            <td class="text-left">User Name</td>
-            <td class="text-left">{{ athlete.username }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Email</td>
-            <td class="text-left">{{ athlete.email }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Phone Number</td>
-            <td class="text-left">{{ athlete.phone_number }}</td>
-            </tr>
             <tr>
             <td class="text-left">Plot Number</td>
             <td class="text-left">{{ athlete.plot_no }}</td>
             </tr>
             <tr>
-            <td class="text-left">Company Name</td>
-            <td class="text-left">{{ athlete.company_name }}</td>
+            <td class="text-left">Area square (ft)</td>
+            <td class="text-left">{{ athlete.area_sqft }}</td>
             </tr>
             <tr>
-            <td class="text-left">Location</td>
-            <td class="text-left">{{ athlete.location }}</td>
+            <td class="text-left">Area Bigha</td>
+            <td class="text-left">{{ athlete.area_bigha }}</td>
             </tr>
             <tr>
-            <td class="text-left">Paid ammount</td>
-            <td class="text-left">{{ athlete.paid_ammount }}</td>
+            <td class="text-left">katha</td>
+            <td class="text-left">{{ athlete.area_katha }}</td>
             </tr>
             <tr>
-            <td class="text-left">Total ammount</td>
-            <td class="text-left">{{ athlete.Total_ammount }}</td>
+            <td class="text-left">Dimension.</td>
+            <td class="text-left">{{ athlete.dimension }}</td>
             </tr>
 
             <tr>
-            <td class="text-left">Last update date</td>
-            <td class="text-left">{{ athlete.update_date }}</td>
+            <td class="text-left">Owner name.</td>
+            <td class="text-left">{{ athlete.owner_name }}</td>
+            </tr>
+            <td class="text-left">Father name.</td>
+            <td class="text-left">{{ athlete.father_field }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Spouse name.</td>
+            <td class="text-left">{{ athlete.spouse_nam }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Land category</td>
+            <td class="text-left">{{ athlete.land_cat  }}</td>
             </tr>
 
-            <tr>
-            <td class="text-left">First installment date</td>
-            <td class="text-left">{{ athlete.first_installment}}</td>
-            </tr>
- 
             </tbody>
         {% endif %}
     {% endfor %}
- {% comment %} for sornaliOwnerUser project {% endcomment %}
-    {% for athlete in sornaliOwnerUser %}
-    
-        {% if athlete.username == request.user.username%}
-            <tbody class="table-hover">
-            <tr>
-            <td class="text-left">User Name</td>
-            <td class="text-left">{{ athlete.username }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Email</td>
-            <td class="text-left">{{ athlete.email }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Phone Number</td>
-            <td class="text-left">{{ athlete.phone_number }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Plot Number</td>
-            <td class="text-left">{{ athlete.plot_no }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Company Name</td>
-            <td class="text-left">{{ athlete.company_name }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Location</td>
-            <td class="text-left">{{ athlete.location }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Paid ammount</td>
-            <td class="text-left">{{ athlete.paid_ammount }}</td>
-            </tr>
-            <tr>
-            <td class="text-left">Total ammount</td>
-            <td class="text-left">{{ athlete.Total_ammount }}</td>
-            </tr>
 
-            <tr>
-            <td class="text-left">Last update date</td>
-            <td class="text-left">{{ athlete.update_date }}</td>
-            </tr>
 
-            <tr>
-            <td class="text-left">First installment date</td>
-            <td class="text-left">{{ athlete.first_installment}}</td>
-            </tr>
- 
-            </tbody>
-        {% endif %}
-    {% endfor %}
 </table>
-  
+      {% else %}
+    <p style="text-align: center">
+      Please <a href="/accounts/register">Register</a> or
+      <a href="/accounts/login">Login</a>
+    </p>
+    {% endif %}
 
   </body>
 </body>

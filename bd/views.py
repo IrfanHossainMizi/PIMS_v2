@@ -5,7 +5,7 @@ from .models import Bangladesh
 from django.contrib import messages
 import re
 
-from .models import Sodesh,NewDhakaCity,RiverParkModelTown
+from .models import Sodesh,NewDhakaCity,RiverParkModelTown,Swadesh
 
 from django.shortcuts import render, redirect
 
@@ -30,7 +30,7 @@ def login_view(request):
         login(request, user)
         if next:
             return redirect(next)
-        return redirect('/sodeshDat')
+        return redirect('/owner_swadesh')
 
     context = {
         'form': form,
@@ -74,6 +74,53 @@ def sodesh(request):
     user = request.user
     sodeshData = serialize('geojson', Sodesh.objects.all())
     return HttpResponse(sodeshData, content_type='geojson')
+# swadesh part
+def swadesh(request):
+    user = request.user
+    swadeshData = serialize('geojson', Swadesh.objects.all())
+    return HttpResponse(swadeshData, content_type='geojson')
+def public_swadesh(request):
+    return render(request, 'public_swadesh.html')
+
+
+def owner_swadesh(request):
+
+    return render(request, 'owner_swadesh.html')
+
+def more_information_swadesh(request):
+    swadeshData =  Swadesh.objects.all()
+    fg = str(request.get_full_path)
+    
+    ft1 = str(re.findall("[0-9]", fg))
+    ft2 = str(re.findall("[0-9][0-9]", fg))
+    ft3 = str(re.findall("[0-9][0-9][0-9]", fg))
+    x1 = '\n'.join(ft1)
+    x2 = '\n'.join(ft2)
+    x3 = '\n'.join(ft3)
+
+
+    d1 = x1[4:5]
+    d2_1 = x2[4:5]
+    d2_2 = x2[6:7]
+    d2 = d2_1 + d2_2
+    d3_1 = x3[4:5]
+    d3_2 = x3[6:7]
+    d3_3 = x3[8:9]   
+    d3 = d3_1 + d3_2 +d3_3
+
+    if len(d3) > 2:
+        sum = d3
+    elif len(d2) > 1:
+        sum = d2
+    else:
+        sum = d1
+
+
+    
+
+    return render(request, 'more_information_swadesh.html', locals())
+
+
 # new dhaka city part
 def new_dhaka_city(request):
     user = request.user
@@ -130,6 +177,7 @@ def more_informationht(request):
     return render(request, 'more_information.html')
 
 # new river park model town part
+
 def river_park_model_town(request):
     user = request.user
     river_park_model_townData = serialize('geojson', RiverParkModelTown.objects.all())
@@ -144,6 +192,50 @@ def public_river_park_model_town(request):
 def owner_river_park_model_town(request):
 
     return render(request, 'owner_river_park_model_town.html')
+
+
+def more_information_river_park_model_town(request):
+    RiverParkModelTownData =  RiverParkModelTown.objects.all()
+    fg = str(request.get_full_path)
+    
+    ft1 = str(re.findall("[0-9]", fg))
+    ft2 = str(re.findall("[0-9][0-9]", fg))
+    ft3 = str(re.findall("[0-9][0-9][0-9]", fg))
+    ft4 = str(re.findall("[0-9][0-9][0-9][0-9]", fg))
+    x1 = '\n'.join(ft1)
+    x2 = '\n'.join(ft2)
+    x3 = '\n'.join(ft3)
+    x4 = '\n'.join(ft4)
+
+
+    d1 = x1[4:5]
+    d2_1 = x2[4:5]
+    d2_2 = x2[6:7]
+    d2 = d2_1 + d2_2
+    d3_1 = x3[4:5]
+    d3_2 = x3[6:7]
+    d3_3 = x3[8:9]
+    d4_1 = x4[4:5]
+    d4_2 = x4[6:7]
+    d4_3 = x4[8:9]
+    d4_4 = x4[10:11]   
+    d3 = d3_1 + d3_2 +d3_3
+    d4 = d4_1 +d4_2 + d4_3 + d4_4
+    if len(d4) > 3:
+        sum = d4
+    elif len(d3) > 2:
+        sum = d3
+    elif len(d2) > 1:
+        sum = d2
+    else:
+        sum = d1
+
+
+    
+
+    return render(request, 'more_information_river_park_model_town.html', locals())
+
+
 
 
 
