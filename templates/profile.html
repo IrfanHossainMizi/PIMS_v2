@@ -298,7 +298,106 @@ td.text-right {
         {% endif %}
     {% endfor %}
  {% comment %} for sornaliOwnerUser project {% endcomment %}
-    {% for athlete in sornaliOwnerUser %}
+    {% for athlete in swadeshOwnerUser%}
+    
+        {% if athlete.username == request.user.username%}
+            <tbody class="table-hover">
+            <tr>
+            <td class="text-left">User Name</td>
+            <td class="text-left">{{ athlete.username }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Email</td>
+            <td class="text-left">{{ athlete.email }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Phone Number</td>
+            <td class="text-left">{{ athlete.phone_number }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Plot Number</td>
+            <td class="text-left">{{ athlete.plot_no }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Company Name</td>
+            <td class="text-left">{{ athlete.company_name }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Location</td>
+            <td class="text-left">{{ athlete.location }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Paid ammount</td>
+            <td class="text-left">{{ athlete.paid_ammount }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Total ammount</td>
+            <td class="text-left">{{ athlete.Total_ammount }}</td>
+            </tr>
+
+            <tr>
+            <td class="text-left">Last update date</td>
+            <td class="text-left">{{ athlete.update_date }}</td>
+            </tr>
+
+            <tr>
+            <td class="text-left">First installment date</td>
+            <td class="text-left">{{ athlete.first_installment}}</td>
+            </tr>
+ 
+            </tbody>
+        {% endif %}
+    {% endfor %}
+    {% for athlete in newDhakaCityOwnerUser%}
+        {% if athlete.username == request.user.username%}
+            <tbody class="table-hover">
+            <tr>
+            <td class="text-left">User Name</td>
+            <td class="text-left">{{ athlete.username }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Email</td>
+            <td class="text-left">{{ athlete.email }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Phone Number</td>
+            <td class="text-left">{{ athlete.phone_number }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Plot Number</td>
+            <td class="text-left">{{ athlete.plot_no }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Company Name</td>
+            <td class="text-left">{{ athlete.company_name }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Location</td>
+            <td class="text-left">{{ athlete.location }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Paid ammount</td>
+            <td class="text-left">{{ athlete.paid_ammount }}</td>
+            </tr>
+            <tr>
+            <td class="text-left">Total ammount</td>
+            <td class="text-left">{{ athlete.Total_ammount }}</td>
+            </tr>
+
+            <tr>
+            <td class="text-left">Last update date</td>
+            <td class="text-left">{{ athlete.update_date }}</td>
+            </tr>
+
+            <tr>
+            <td class="text-left">First installment date</td>
+            <td class="text-left">{{ athlete.first_installment}}</td>
+            </tr>
+ 
+            </tbody>
+        {% endif %}
+    {% endfor %}
+    {% for athlete in riverParkModelTownOwnerUser%}
     
         {% if athlete.username == request.user.username%}
             <tbody class="table-hover">

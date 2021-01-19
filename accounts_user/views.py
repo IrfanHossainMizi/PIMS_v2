@@ -12,11 +12,14 @@ import re
 # In here calling  all method in this section from database which is model.py
 from .models import SodeshOwnerUser,SornaliOwnerUser
 
-
+from .models import SwadeshOwnerUser,NewDhakaCityOwnerUser, RiverParkModelTownOwnerUser
 
 # this is a view which is communicate database and htpage in this section
 # all object goes t profile.html page which is play as like magic
 def user_information(request):
     sodeshOwnerUser =  SodeshOwnerUser.objects.all()
     sornaliOwnerUser =  SornaliOwnerUser.objects.all()
+    swadeshOwnerUser =  SwadeshOwnerUser.objects.all()
+    newDhakaCityOwnerUser =  NewDhakaCityOwnerUser.objects.all()
+    riverParkModelTownOwnerUser =  RiverParkModelTownOwnerUser.objects.all()
     return render(request, 'profile.html', locals())
