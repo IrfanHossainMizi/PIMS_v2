@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from .models import Bangladesh
 from django.contrib import messages
 import re
-
+from accounts_user.models import SwadeshOwnerUser,RiverParkModelTownOwnerUser,NewDhakaCityOwnerUser
 from .models import Sodesh,NewDhakaCity,RiverParkModelTown,Swadesh
 
 from django.shortcuts import render, redirect
@@ -84,10 +84,14 @@ def public_swadesh(request):
 
 
 def owner_swadesh(request):
+    user = request.user
+    swadeshOwnerUser =  SwadeshOwnerUser.objects.all()
 
-    return render(request, 'owner_swadesh.html')
+    return render(request, 'owner_swadesh.html',locals())
 
 def more_information_swadesh(request):
+    user = request.user
+    swadeshOwnerUser =  SwadeshOwnerUser.objects.all()
     swadeshData =  Swadesh.objects.all()
     fg = str(request.get_full_path)
     
@@ -134,8 +138,9 @@ def public_new_dhaka_city(request):
 
 
 def owner_new_dhaka_city(request):
-
-    return render(request, 'owner_new_dhaka_city.html')
+    user = request.user
+    newDhakaCityOwnerUser =  NewDhakaCityOwnerUser.objects.all()
+    return render(request, 'owner_new_dhaka_city.html', locals())
 
 def more_information_new_dhaka_city(request):
     NewDhakaCityData =  NewDhakaCity.objects.all()

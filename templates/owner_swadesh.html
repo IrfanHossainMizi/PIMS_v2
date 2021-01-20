@@ -145,9 +145,11 @@
       background-color: rgba(255, 255, 255, 1);
     }
   </style>
+
+  {% for athlete in swadeshOwnerUser %}
+
   <body>
-    <h1 style="text-align: center">Swadesh Properties Ltd</h1>
-    {% if user.is_authenticated %} {% comment %}
+    {% if athlete.username == request.user.username%} {% comment %}
     <button class="print-map">Print map</button> {% endcomment %}
 
     <div id="map"></div>
@@ -210,21 +212,21 @@
           onEachFeature: function (feature, layer) {
             layer.bindPopup(
               `<h4> Private Information</h4>
-      <h5>Plot Number: ${feature.properties.plot_no}</h5>
-      <h5>Plot Size: ${feature.properties.area_katha}</h5>
-      <h5>Owner Name: ${feature.properties.owner_name}</h5>
-      <h5>Contact : ${feature.properties.contact}</h5>
-      <h5>Area  Amaount SQFT: ${feature.properties.area_sqft}</h5>
+                <h5>Plot Number: ${feature.properties.plot_no}</h5>
+                <h5>Plot Size: ${feature.properties.area_katha}</h5>
+                <h5>Owner Name: ${feature.properties.owner_name}</h5>
+                <h5>Contact : ${feature.properties.contact}</h5>
+                <h5>Area  Amaount SQFT: ${feature.properties.area_sqft}</h5>
 
 
-      <h5>Plot Area Bigha: ${feature.properties.area_bigha}</h5>
+                <h5>Plot Area Bigha: ${feature.properties.area_bigha}</h5>
 
-      <h5>Father Name: ${feature.properties.father_field}</h5>
-      <h5>Spouse Name: ${feature.properties.spouse_nam}</h5>
-      <h5>Katha ammount : ${feature.properties.new}</h5>
-      <h5>Land condition : ${feature.properties.land_cat}</h5>
-      <h5>Dimension: ${feature.properties.dimension}</h5>
-      <h5><a href="../more_information_swadesh/?plot_num=${feature.properties.plot_no}">More Information</a></h5>`
+                <h5>Father Name: ${feature.properties.father_field}</h5>
+                <h5>Spouse Name: ${feature.properties.spouse_nam}</h5>
+                <h5>Katha ammount : ${feature.properties.new}</h5>
+                <h5>Land condition : ${feature.properties.land_cat}</h5>
+                <h5>Dimension: ${feature.properties.dimension}</h5>
+                <h5><a href="../more_information_swadesh/?plot_num=${feature.properties.plot_no}">More Information</a></h5>`
             );
           },
           style: geojsonStyle,
@@ -271,11 +273,11 @@
 
       legend.addTo(map);
     </script>
-    {% else %}
+
     <p style="text-align: center">
       Please <a href="/accounts/register">Register</a> or
       <a href="/accounts/login">Login</a>
     </p>
-    {% endif %}
+    {%endif%} {% endfor %}
   </body>
 </html>

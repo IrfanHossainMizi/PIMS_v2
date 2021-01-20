@@ -234,8 +234,14 @@ td.text-right {
 
 
 <body>
+ {% for athlete in swadeshOwnerUser %}
 
-{% if user.is_authenticated %}
+
+
+  <body>
+
+    {% if athlete.username == request.user.username%}
+{% comment %} {% if user.is_authenticated %} {% endcomment %}
 
 <div class="table-title">
 <h3>Plot Detail information</h3>
@@ -295,13 +301,8 @@ td.text-right {
 
 
 </table>
-      {% else %}
-    <p style="text-align: center">
-      Please <a href="/accounts/register">Register</a> or
-      <a href="/accounts/login">Login</a>
-    </p>
-    {% endif %}
-
+{%endif%}
+{%endfor%}
   </body>
 </body>
 </html>
