@@ -20,7 +20,8 @@
 
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+<div class="fixed-bg">  
 <div class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="row">
@@ -53,7 +54,7 @@
                             
                             <li><a href="/contact">Contact Us</a></li>
                         </ul>
-                        <ul class="nav navbar-nav">
+                        {% comment %} <ul class="nav navbar-nav">
                             <li>
                                 <form action="" class="navbar-form">
                                     <div class="form-group">
@@ -64,7 +65,7 @@
                                     </div>
                                 </form>
                             </li>
-                        </ul>
+                        </ul> {% endcomment %}
 
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="./profile"><span class="glyphicon glyphicon-user"></span>{% firstof request.user.get_full_name request.user.username %}</a></li>
@@ -83,10 +84,10 @@
     </div>
 
 <div>
+
 <h1 style="text-align:center">
     Plot Information Management System (PIMS)
 </h1>
-
 
 
 <style>
@@ -196,9 +197,7 @@
 
 
 
-body {
-  background: rgb(240, 208, 208);
-}
+
 
 .cardView{
   position: absolute;
@@ -217,7 +216,7 @@ body {
 
   padding: 20px;  
   background: rgb(223, 92, 103);
-  color: white;
+  {% comment %} color: white; {% endcomment %}
   text-align: center;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
@@ -236,17 +235,17 @@ body {
 .cardViewForBOX{
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   
 
   
-  width: 40%;
-  height: 27%;
+  width: 100%;
+  height: 40%;
 
   padding: 20px;  
   background: rgba(66, 202, 73, 0);
-  color: white;
+  {% comment %} color: white; {% endcomment %}
   text-align: center;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.2);
 }
@@ -263,6 +262,22 @@ body {
     padding:3px;margin:3px;
     }
 
+.fixed-bg {
+  background-image: url('{% static 'img/background.jpg' %}');
+  min-height: 1000px;  /*The min-height property defines the minimum height of an element. If the content is smaller than the minimum height, the minimum height will be applied. */
+  background-attachment: fixed;  /* A background-image that will not scroll with the page (fixed): */
+  background-position: center; /* The background-position property sets the starting position of a background image.*/
+  background-repeat: no-repeat; /* The backgroud image won't repeat */
+  background-size: cover;  /*  */
+
+}
+
+body {
+  {% comment %} background: rgb(240, 208, 208); {% endcomment %}
+  {% comment %} background-image: url('{% static 'img/background.jpg' %}'); {% endcomment %}
+
+  
+}
 </style>
 <script type="text/javascript">
     function showSpoiler(obj)
@@ -301,7 +316,7 @@ body {
 
 
 <div class="spoiler">
-    <img id="myimg" onclick="showSpoiler(this);" src="{% static 'img/7.jpg' %}" alt="flowers in bd">
+    <img id="myimg" onclick="showSpoiler(this);" src="{% static 'img/gpad101.png' %}" alt="flowers in bd">
     <div class="inner" style="display:none;">
 
 
@@ -315,7 +330,7 @@ body {
 
     </div>
 </div>
-
+</div>
 
 </body>
 </html>

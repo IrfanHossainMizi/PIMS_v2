@@ -40,7 +40,11 @@ class UserRegisterForm(forms.ModelForm):
             'email2',
             'password'
         ]
-
+    # def clean_username(self):
+    #     username = self.cleaned_data['username']
+    #     if User.objects.exclude(pk=self.instance.pk).filter(username=username).exists():
+    #         raise forms.ValidationError(u'Username "%s" is already in use.' % username)
+    #     return username
     def clean(self, *args, **kwargs):
         email = self.cleaned_data.get('email')
         email2 = self.cleaned_data.get('email2')

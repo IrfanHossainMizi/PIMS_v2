@@ -55,6 +55,7 @@
               <li><a href="#">Demo</a></li>
               <li><a href="/contact">Contact Us</a></li>
             </ul>
+            {% comment %}
             <ul class="nav navbar-nav">
               <li>
                 <form action="" class="navbar-form">
@@ -75,6 +76,7 @@
                 </form>
               </li>
             </ul>
+            {% endcomment %}
 
             <ul class="nav navbar-nav navbar-right">
               <li>
@@ -149,8 +151,7 @@
   {% for athlete in swadeshOwnerUser %}
 
   <body>
-    {% if athlete.username == request.user.username%} {% comment %}
-    <button class="print-map">Print map</button> {% endcomment %}
+    {% if athlete.username == request.user.username%}
 
     <div id="map"></div>
 

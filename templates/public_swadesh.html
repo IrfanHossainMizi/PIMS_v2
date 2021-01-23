@@ -54,6 +54,7 @@
               <li><a href="#">Demo</a></li>
               <li><a href="/contact">Contact Us</a></li>
             </ul>
+            {% comment %}
             <ul class="nav navbar-nav">
               <li>
                 <form action="" class="navbar-form">
@@ -74,6 +75,7 @@
                 </form>
               </li>
             </ul>
+            {% endcomment %}
 
             <ul class="nav navbar-nav navbar-right">
               <li>
@@ -234,7 +236,7 @@
       <h5>Plot Number: ${feature.properties.plot_no}</h5>
       <h5>Plot Size: ${feature.properties.area_katha} katha</h5>
       <h5>Block: </h5>
-      <h5><a href="/accounts/login/">Details</a></h5>`
+      <h5><a href="/owner_swadesh/">Details</a></h5>`
             );
           },
           style: geojsonStyle,

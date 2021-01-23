@@ -80,6 +80,7 @@ def swadesh(request):
     swadeshData = serialize('geojson', Swadesh.objects.all())
     return HttpResponse(swadeshData, content_type='geojson')
 def public_swadesh(request):
+    user = request.user
     return render(request, 'public_swadesh.html')
 
 
@@ -133,6 +134,7 @@ def new_dhaka_city(request):
 
 
 def public_new_dhaka_city(request):
+    user = request.user
 
     return render(request, 'public_new_dhaka_city.html')
 
@@ -143,6 +145,8 @@ def owner_new_dhaka_city(request):
     return render(request, 'owner_new_dhaka_city.html', locals())
 
 def more_information_new_dhaka_city(request):
+    user = request.user
+    newDhakaCityOwnerUser =  NewDhakaCityOwnerUser.objects.all()
     NewDhakaCityData =  NewDhakaCity.objects.all()
     fg = str(request.get_full_path)
     
@@ -190,16 +194,20 @@ def river_park_model_town(request):
 
 
 def public_river_park_model_town(request):
+    user = request.user
 
     return render(request, 'public_river_park_model_town.html')
 
 
 def owner_river_park_model_town(request):
+    user = request.user
 
     return render(request, 'owner_river_park_model_town.html')
 
 
 def more_information_river_park_model_town(request):
+    user = request.user
+    riverParkModelTownOwnerUser = RiverParkModelTownOwnerUser.objects.all()
     RiverParkModelTownData =  RiverParkModelTown.objects.all()
     fg = str(request.get_full_path)
     
@@ -291,14 +299,17 @@ def index(request):
 
 
 def  about_pims(request):
+    user = request.user
     return render(request,'about_PIMS.html')
 
 
 
 
 def  contact(request):
+    user = request.user
     return render(request,'contact_us.html')
 def pricing(request):
+    user = request.user
 
     return render(request, 'pricing.html')
 

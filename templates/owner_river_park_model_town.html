@@ -50,6 +50,7 @@
               <li><a href="#">Demo</a></li>
               <li><a href="/contact">Contact Us</a></li>
             </ul>
+            {% comment %}
             <ul class="nav navbar-nav">
               <li>
                 <form action="" class="navbar-form">
@@ -70,6 +71,7 @@
                 </form>
               </li>
             </ul>
+            {% endcomment %}
 
             <ul class="nav navbar-nav navbar-right">
               <li>
@@ -140,10 +142,11 @@
       background-color: rgba(255, 255, 255, 1);
     }
   </style>
+  {% for athlete in newDhakaCityOwnerUser %}
+
   <body>
+    {% if athlete.username == request.user.username%}
     <h1 style="text-align: center">River park model town</h1>
-    {% if user.is_authenticated %} {% comment %}
-    <button class="print-map">Print map</button> {% endcomment %}
 
     <div id="map"></div>
 
@@ -266,11 +269,11 @@
 
       legend.addTo(map);
     </script>
-    {% else %}
+
     <p style="text-align: center">
       Please <a href="/accounts/register">Register</a> or
       <a href="/accounts/login">Login</a>
     </p>
-    {% endif %}
+    {%endif%} {% endfor %}
   </body>
 </html>
