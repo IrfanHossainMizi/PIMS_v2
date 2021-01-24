@@ -30,7 +30,7 @@ def login_view(request):
         login(request, user)
         if next:
             return redirect(next)
-        return redirect('/owner_swadesh')
+        return redirect('/')
 
     context = {
         'form': form,
@@ -201,8 +201,8 @@ def public_river_park_model_town(request):
 
 def owner_river_park_model_town(request):
     user = request.user
-
-    return render(request, 'owner_river_park_model_town.html')
+    riverParkModelTownOwnerUser = RiverParkModelTownOwnerUser.objects.all()
+    return render(request, 'owner_river_park_model_town.html', locals())
 
 
 def more_information_river_park_model_town(request):
